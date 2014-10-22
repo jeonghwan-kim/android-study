@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">My Application4</string>
-    <string name="hello_round">Hello Round World!</string>
-    <string name="hello_square">Hello Square World!</string>
+    <string name="hello_round">Halo Round World!</string>
+    <string name="hello_square">Halo Square World!</string>
 
 </resources>
