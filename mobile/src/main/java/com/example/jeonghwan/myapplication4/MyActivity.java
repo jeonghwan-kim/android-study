@@ -17,14 +17,14 @@ public class MyActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
 
-        Log.i("tag1", "onCreate()");
+        Log.d("tag1", "onCreate()");
         Button btnClickMe = (Button)findViewById(R.id.btnClickMe);
         btnClickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Button btnClickMe = (Button)view.findViewById(R.id.btnClickMe);
                 btnClickMe.setText(R.string.clicked);
-                Log.i("tag", "Clicked");
+                Log.d("tag1", "Clicked");
             }
         });
     }

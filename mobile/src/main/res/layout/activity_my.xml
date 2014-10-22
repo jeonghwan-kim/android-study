@@ -19,4 +19,9 @@
         android:background="@drawable/btn_selector"
         android:id="@+id/btnClickMe" />
 
+    <com.example.jeonghwan.myapplication4.EchoEditText
+        android:id="@+id/echo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
