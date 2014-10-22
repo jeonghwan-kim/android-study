@@ -21,9 +21,9 @@ public class MyActivity extends Activity {
         tvClickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                TextView tvClickMe = (TextView)view.findViewById(R.id.textViewClickMe);
-                tvClickMe.setText(R.string.clicked);
-                Log.i("tag", "Clicked");
+            TextView tvClickMe = (TextView)view.findViewById(R.id.textViewClickMe);
+            tvClickMe.setText(R.string.clicked);
+            Log.i("tag", "Clicked");
             }
         });
     }
