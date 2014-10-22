@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -17,13 +18,13 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
 
         Log.i("tag1", "onCreate()");
-        TextView tvClickMe = (TextView)findViewById(R.id.textViewClickMe);
-        tvClickMe.setOnClickListener(new View.OnClickListener() {
+        Button btnClickMe = (Button)findViewById(R.id.btnClickMe);
+        btnClickMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            TextView tvClickMe = (TextView)view.findViewById(R.id.textViewClickMe);
-            tvClickMe.setText(R.string.clicked);
-            Log.i("tag", "Clicked");
+                Button btnClickMe = (Button)view.findViewById(R.id.btnClickMe);
+                btnClickMe.setText(R.string.clicked);
+                Log.i("tag", "Clicked");
             }
         });
     }
