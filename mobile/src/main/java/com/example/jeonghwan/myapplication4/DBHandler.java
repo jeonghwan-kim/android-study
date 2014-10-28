@@ -48,4 +48,17 @@ public class DBHandler {
 
         return cursor;
     }
+
+    public Cursor selectAll() {
+//        Cursor cursor = db.query(true, "cars",
+//                new String[] {"_id", "car_name"},
+//                null,
+//                null, null, null, null, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM cars", null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        return cursor;
+    }
 }

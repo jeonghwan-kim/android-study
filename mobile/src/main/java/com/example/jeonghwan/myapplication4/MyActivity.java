@@ -8,12 +8,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 import android.app.AlertDialog;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 
 public class MyActivity extends Activity {
@@ -131,6 +135,47 @@ public class MyActivity extends Activity {
                 }
 
                 dbHandler.close();
+            }
+        });
+
+        // 리스트보기 버튼 핸들러
+        Button btnListAll = (Button) findViewById(R.id.btnListAll);
+        btnListAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("tag", "리스트보기 버튼 클릭");
+
+                DBHandler dbHandler = null;
+                try {
+                    dbHandler = DBHandler.open(MyActivity.this);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+                Cursor cursor = dbHandler.selectAll();
+                startManagingCursor(cursor);
+                Log.d("tag", cursor.getCount() + " rows are loaded" );
+
+                SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(
+                        MyActivity.this,
+                        android.R.layout.simple_list_item_1 , cursor,
+                        new String[] { "car_name" },
+                        new int[] { android.R.id.text1 } );
+                ListView listView = (ListView) findViewById(R.id.list);
+                listView.setAdapter(cursorAdapter);
+
+                dbHandler.close();
+
+//                Array list
+//                ArrayList<String> arrayList = new ArrayList<String>();
+//                arrayList.add("1.hello");
+//                arrayList.add("2.halo");
+//
+//                ArrayAdapter<String> adapter = new ArrayAdapter<String>(MyActivity.this,
+//                        android.R.layout.simple_list_item_1, arrayList);
+//
+//                ListView listView = (ListView) findViewById(R.id.list);
+//                listView.setAdapter(adapter);
             }
         });
     }

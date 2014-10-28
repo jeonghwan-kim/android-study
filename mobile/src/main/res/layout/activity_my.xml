@@ -64,6 +64,18 @@
             android:id="@+id/btnSearch "/>
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="리스트 보기"
+        android:id="@+id/btnListAll" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list">
+    </ListView>
+
     <SlidingDrawer
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
