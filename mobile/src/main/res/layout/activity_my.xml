@@ -25,6 +25,12 @@
         android:background="@drawable/btn_selector"
         android:id="@+id/btnClickMe" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="토스트 보기"
+        android:id="@+id/btnToast"/>
+
     <SlidingDrawer
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MyActivity extends Activity {
@@ -18,6 +18,8 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
 
         Log.d("tag1", "onCreate()");
+
+        // 버튼 설정
         Button btnClickMe = (Button)findViewById(R.id.btnClickMe);
         btnClickMe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +27,16 @@ public class MyActivity extends Activity {
                 Button btnClickMe = (Button)view.findViewById(R.id.btnClickMe);
                 btnClickMe.setText(R.string.clicked);
                 Log.d("tag1", "Clicked");
+            }
+        });
+
+        // 토스트 보기 버튼 설정
+        Button btnToast = (Button)findViewById(R.id.btnToast);
+        btnToast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("tag", "Toast clicked");
+                Toast.makeText(v.getContext(), "토스트!", Toast.LENGTH_SHORT).show();
             }
         });
     }
